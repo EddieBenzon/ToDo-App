@@ -1,13 +1,369 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&family=Quicksand:wght@300;400;500&display=swap");
+
+:root {
+  --main-color: rgb(19, 172, 44);
+  --main-color-dark: rgb(15, 141, 36);
+  --main-color-darker: rgb(10, 102, 25);
+  --main-color-extra-dark: rgb(61, 121, 72);
+  --text-color-gray: rgb(80, 80, 80);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+body {
+  background-color: var(--main-color-extra-dark);
+}
+
+.header {
+  font-family: "Quicksand", sans-serif;
+  color: var(--main-color);
+  background-color: white;
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+.header h3 {
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 500;
+}
+.header span {
+  color: var(--text-color-gray);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Intro Styles */
+.intro-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 50px auto 14px auto;
+  width: 70%;
+}
+.intro {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  max-width: 650px;
+  background-color: var(--main-color);
+  border-radius: 0.5rem;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+}
+.intro h2 {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+
+.intro button {
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  align-self: flex-end;
+  border: 1px solid white;
+  background: none;
+  font-size: 22px;
+}
+
+.intro button:hover {
+  cursor: pointer;
+  background-color: var(--main-color-dark);
+}
+.intro button:active {
+  cursor: pointer;
+  background-color: var(--main-color-darker);
+}
+.intro img {
+  margin-top: 40px;
+  width: 500px;
+  height: auto;
+}
+
+.about {
+  color: var(--main-color);
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 14px;
+  padding: 24px;
+  max-width: 650px;
+  min-width: 350px;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.about h2 {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about h3 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.about p {
+  font-size: 20px;
+  color: var(--text-color-gray);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* Form Styles */
+
+.main-container {
+  margin: 38px auto 0px auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-family: "Quicksand", sans-serif;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-container {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+}
+.form-container input {
+  border: none;
+  width: 100%;
+  background-color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+  padding: 12px;
+  font-weight: 300;
+  font-size: 18px;
+}
+.form-container input:focus {
+  outline: none;
+}
+.form-container button {
+  color: white;
+  padding: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  border: none;
+  margin-left: 10px;
+  background-color: var(--main-color);
+  font-size: 18px;
+}
+.form-container button:hover {
+  cursor: pointer;
+  background-color: var(--main-color-dark);
+}
+.form-container button:active {
+  background-color: var(--main-color-darker);
+}
+/* Tasks Styles */
+
+.task-container {
+  background: none;
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+}
+
+.h3-visible {
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  color: var(--main-color);
+  border-bottom: 1px solid rgb(211, 211, 211);
+  padding-bottom: 8px;
+  width: 100%;
+}
+.h3-hidden {
+  display: none;
+}
+
+.task-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 22px;
+  margin-bottom: 14px;
+  animation: fadeElement 0.2s forwards;
+}
+.task-card section {
+  display: flex;
+  width: 70%;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.checkbox {
+  min-width: 22px;
+  min-height: 22px;
+  margin-left: 10px;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 0.2rem;
+}
+.checkbox:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+.task-card button {
+  font-size: 18px;
+  max-height: 34px;
+  background-color: rgb(247, 81, 81);
+  border: none;
+  border-radius: 0.25rem;
+  color: white;
+  padding: 5px;
+  transition: background-color 0.2s;
+}
+.task-card button:hover {
+  cursor: pointer;
+  background-color: rgb(182, 57, 57);
+}
+.task-card button:active {
+  cursor: pointer;
+  background-color: rgb(136, 42, 42);
+}
+/* Completed Styles */
+.task-card.completed {
+  animation: fadeElement 0.2s forwards;
+}
+.icon-check {
+  color: var(--main-color);
+  height: 30px;
+  width: 30px;
+}
+.completed-container h3 {
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 24px;
+}
+.completed p {
+  color: var(--main-color);
+  font-weight: 300;
+}
+
+/* Finish Component Styles */
+
+.finished-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: var(--main-color);
+  margin-top: 15px;
+  width: 100%;
+}
+
+.finished-container h3 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  animation: fadeElement 0.2s;
+}
+.finished-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.finished-button-container button {
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  border: 1px solid white;
+  background: var(--main-color);
+  font-size: 22px;
+  width: 180px;
+}
+.finished-button-container button:hover {
+  cursor: pointer;
+  background-color: var(--main-color-dark);
+}
+.finished-button-container button:active {
+  cursor: pointer;
+  background-color: var(--main-color-darker);
+}
+
+/* Transition/Tablet Styles */
+
+@media only screen and (max-width: 1341px) {
+  .main-container {
+    width: 60%;
+  }
+}
+/* Mobile Styles */
+
+@media only screen and (max-width: 912px) {
+  .intro-wrapper {
+    flex-direction: column;
+  }
+  .about {
+    margin: 18px 0px;
+  }
+  .intro img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-wrapper {
+    width: 95%;
+  }
+  .about {
+    padding: 18px;
+    width: 100%;
+    min-width: 1px;
+  }
+  .intro {
+    padding: 18px;
+    width: 100%;
+  }
+  .main-container {
+    width: 95%;
+  }
+}
+
+/* Animations */
+
+@keyframes fadeElement {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

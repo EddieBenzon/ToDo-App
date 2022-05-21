@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import Introduction from "./Pages/Introduction";
+import List from "./Pages/List";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    document.title = "Do It App";
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Introduction />} />
+        <Route path="/list" element={<List />} />
+      </Routes>
     </div>
   );
 }
