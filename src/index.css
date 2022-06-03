@@ -216,6 +216,10 @@ body {
   margin-bottom: 14px;
   animation: fadeElement 0.2s forwards;
 }
+.task-text {
+  display: inline-block;
+  word-break: break-word;
+}
 .task-card section {
   display: flex;
   width: 70%;
@@ -255,6 +259,9 @@ body {
 /* Completed Styles */
 .task-card.completed {
   animation: fadeElement 0.2s forwards;
+}
+.task-card.completed div:hover {
+  cursor: pointer;
 }
 .icon-check {
   color: var(--main-color);

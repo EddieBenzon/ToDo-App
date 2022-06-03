@@ -27,6 +27,12 @@ const List = () => {
     setCompleted([...completed, newCompletedItem]);
   };
 
+  const uncompleteItem = (id) => {
+    const newUncompleted = completed.find((item) => item.id == id);
+    setTasks([...tasks, newUncompleted]);
+    setCompleted(completed.filter((item) => item.id !== id));
+  };
+
   const newList = () => {
     setTasks([]);
     setCompleted([]);
@@ -65,7 +71,7 @@ const List = () => {
           return (
             <div className="task-card" key={id}>
               <section>
-                <p>{`${task}`}</p>
+                <p className="task-text">{`${task}`}</p>
                 <div
                   className="checkbox"
                   onClick={() => completeItem(id)}
@@ -84,9 +90,9 @@ const List = () => {
           const { task, id } = item;
           return (
             <div className="task-card completed" key={id}>
-              <p>{`${task}`}</p>
+              <p className="task-text">{`${task}`}</p>
               <IconContext.Provider value={{ className: "icon-check" }}>
-                <div>
+                <div onClick={() => uncompleteItem(id)}>
                   <BsCheck2Square />
                 </div>
               </IconContext.Provider>
