@@ -3,9 +3,18 @@ import { BsCheck2Square } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import Finished from "../Components/Finished";
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  if (list) {
+    return JSON.parse(localStorage.getItem("list"));
+  } else {
+    return [];
+  }
+};
+
 const List = () => {
   const [taskString, setTaskString] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(getLocalStorage());
   const [completed, setCompleted] = useState([]);
   const [allFinished, setAllFinished] = useState(false);
 
@@ -50,7 +59,9 @@ const List = () => {
       setAllFinished(false);
     }
   }, [tasks]);
-
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(tasks));
+  }, [tasks]);
   return (
     <div className="main-container">
       <form className="form-container" onSubmit={handleSubmit}>
